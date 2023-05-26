@@ -10,4 +10,5 @@ COPY --from=builder ./app/dist ./dist
 COPY package.json .
 COPY package-lock.json .
 RUN npm install --production
+EXPOSE 6000
 CMD [ "npm", "start" ]
