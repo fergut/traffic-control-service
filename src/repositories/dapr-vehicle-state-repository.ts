@@ -5,7 +5,7 @@ const daprHost = process.env.DAPR_HOST ?? "http://localhost";
 const daprPort = process.env.DAPR_HTTP_PORT;
 const communicationProtocol = CommunicationProtocolEnum.HTTP;
 
-const DAPR_STATE_STORE_NAME = "statestore";
+const DAPR_STATE_STORE_NAME = process.env.DAPR_STATE_STORE_NAME ?? "statestore";
 
 const client = new DaprClient(daprHost, daprPort, communicationProtocol);
 
