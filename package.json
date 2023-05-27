@@ -7,7 +7,6 @@
     "build": "tsc -p .",
     "dev": "ts-node-dev src/index.ts",
     "start": "node dist/index.js"
-
   },
   "keywords": [],
   "author": "",
@@ -21,6 +20,5 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "rimraf": "^5.0.1"
   }
 }
