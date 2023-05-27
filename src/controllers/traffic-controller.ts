@@ -11,6 +11,26 @@ const vehicleStateRepository = new DaprVehicleStateRepository();
 const vehicleSpeedingViolationMessaging = new DaprVehicleSpeedingViolationMessaging();
 const speedingViolationCalculator = new DefaultSpeedingViolationCalculator();
 
+router.get('/health', async (req: Request, res: Response) => {
+
+    try {
+
+        console.log("Health check.");
+
+        const daprConfig = {
+            "daprPort": process.env.DAPR_HTTP_PORT,
+            "daprHost": process.env.DAPR_HOST
+        };
+    
+        res.status(200).send(daprConfig);   
+
+    } catch (error) {
+        console.log("Error occurred while processing health check %s", error);
+        res.status(500).send();  
+    }
+
+});
+
 router.post('/entrycam', async (req: Request, res: Response) => {
 
     try {
